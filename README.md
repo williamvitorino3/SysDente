@@ -78,15 +78,20 @@ Sistema para consultórios dentários.
 | Tipo |
 | Descricao |
 
-| Fornecedor |
+| Empresa |
 | --- |
 | Id |
-| Dentista |
-| Nome_Empresa |
+| Nome |
 | Cnpj |
 | Endereco |
 | Telefone |
 | Email |
+
+| Fornecedor |
+| --- |
+| Id |
+| Dentista |
+| Empresa |
 
 | Funcionario |
 | --- |
