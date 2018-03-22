@@ -3,16 +3,15 @@ Sistema para consultórios dentários.
 
 ## Listagem das Entidades do Sistema
 
-### Paciente
-
-* Id
-* Dentista
-
-* Nome
-* Telefone
-* Endereco
-* Email
-* Data_Nascimento
+|Paciente|
+| --- |
+| Id |
+| Dentista |
+| Nome |
+| Telefone |
+| Endereco |
+| Email |
+| Data_Nascimento |
 
 ### Convenio
 
