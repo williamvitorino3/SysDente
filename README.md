@@ -6,11 +6,11 @@ Sistema para consultórios dentários.
 
 ### Paciente
 
-..* Id
-..* Id_Dentista
-..* Id_Cidade
-..* Nome
-..* Telefone
-..* Endereco
-..* Email
-..* Data_Nascimento
+⋅⋅* Id
+⋅⋅* Id_Dentista
+⋅⋅* Id_Cidade
+⋅⋅* Nome
+⋅⋅* Telefone
+⋅⋅* Endereco
+⋅⋅* Email
+⋅⋅* Data_Nascimento
