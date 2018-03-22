@@ -1,13 +1,13 @@
 # SysDente
 Sistema para consultórios dentários.
 
-## Listagem das Entidades do Sistema Proposto
+## Listagem das Entidades do Sistema
 
 ### Paciente
 
 * Id
 * Dentista
-* Cidade
+
 * Nome
 * Telefone
 * Endereco
@@ -27,7 +27,7 @@ Sistema para consultórios dentários.
 * Id
 * Historico_Paciente
 * Convenio
-* Cidade
+
 * Nome
 * Endereco
 * Telefone
@@ -51,6 +51,14 @@ Sistema para consultórios dentários.
 * Id
 * Estado
 * Nome
+
+### Endereco
+
+* Id
+* Cidade
+* Estado
+* Rua
+* Numero
 
 ### Dentista
 
@@ -76,7 +84,7 @@ Sistema para consultórios dentários.
 
 * Id
 * Dentista
-* Cidade
+
 * Nome_Empresa
 * Cnpj
 * Endereco
@@ -87,7 +95,7 @@ Sistema para consultórios dentários.
 
 * Id
 * Dentista
-* Cidade
+
 * Nome
 * Data_Nascimento
 * Telefone
