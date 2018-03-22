@@ -26,7 +26,6 @@ Sistema para consultórios dentários.
 | Id |
 | Historico_Paciente |
 | Convenio |
-
 | Nome |
 | Endereco |
 | Telefone |
