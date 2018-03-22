@@ -82,7 +82,6 @@ Sistema para consultórios dentários.
 | --- |
 | Id |
 | Dentista |
-
 | Nome_Empresa |
 | Cnpj |
 | Endereco |
@@ -93,7 +92,6 @@ Sistema para consultórios dentários.
 | --- |
 | Id |
 | Dentista |
-
 | Nome |
 | Data_Nascimento |
 | Telefone |
