@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ConvenioSet" EntityType="Model1.Convenio" />
+          <EntitySet Name="EnderecoSet" EntityType="Model1.Endereco" />
+          <EntitySet Name="EstadoSet" EntityType="Model1.Estado" />
+          <EntitySet Name="CidadeSet" EntityType="Model1.Cidade" />
+          <AssociationSet Name="CidadeEstado" Association="Model1.CidadeEstado">
+            <End Role="Cidade" EntitySet="CidadeSet" />
+            <End Role="Estado" EntitySet="EstadoSet" />
+          </AssociationSet>
+          <AssociationSet Name="EnderecoCidade" Association="Model1.EnderecoCidade">
+            <End Role="Endereco" EntitySet="EnderecoSet" />
+            <End Role="Cidade" EntitySet="CidadeSet" />
+          </AssociationSet>
+          <AssociationSet Name="ConvenioEndereco" Association="Model1.ConvenioEndereco">
+            <End Role="Convenio" EntitySet="ConvenioSet" />
+            <End Role="Endereco" EntitySet="EnderecoSet" />
+          </AssociationSet>
+          <EntitySet Name="AgendaSet" EntityType="Model1.Agenda" />
+          <EntitySet Name="HistoricoPacienteSet" EntityType="Model1.HistoricoPaciente" />
+          <EntitySet Name="EmpresaSet" EntityType="Model1.Empresa" />
+          <AssociationSet Name="EnderecoEmpresa" Association="Model1.EnderecoEmpresa">
+            <End Role="Endereco" EntitySet="EnderecoSet" />
+            <End Role="Empresa" EntitySet="EmpresaSet" />
+          </AssociationSet>
+          <EntitySet Name="DentistaSet" EntityType="Model1.Dentista" />
+          <AssociationSet Name="DentistaAgenda" Association="Model1.DentistaAgenda">
+            <End Role="Dentista" EntitySet="DentistaSet" />
+            <End Role="Agenda" EntitySet="AgendaSet" />
+          </AssociationSet>
+          <AssociationSet Name="DentistaEndereco" Association="Model1.DentistaEndereco">
+            <End Role="Dentista" EntitySet="DentistaSet" />
+            <End Role="Endereco" EntitySet="EnderecoSet" />
+          </AssociationSet>
+          <AssociationSet Name="DentistaConvenio" Association="Model1.DentistaConvenio">
+            <End Role="Dentista" EntitySet="DentistaSet" />
+            <End Role="Convenio" EntitySet="ConvenioSet" />
+          </AssociationSet>
+          <EntitySet Name="ExameSet" EntityType="Model1.Exame" />
+          <AssociationSet Name="ExameDentista" Association="Model1.ExameDentista">
+            <End Role="Exame" EntitySet="ExameSet" />
+            <End Role="Dentista" EntitySet="DentistaSet" />
+          </AssociationSet>
+          <EntitySet Name="PacienteSet" EntityType="Model1.Paciente" />
+          <AssociationSet Name="PacienteEndereco" Association="Model1.PacienteEndereco">
+            <End Role="Paciente" EntitySet="PacienteSet" />
+            <End Role="Endereco" EntitySet="EnderecoSet" />
+          </AssociationSet>
+          <AssociationSet Name="PacienteConvenio" Association="Model1.PacienteConvenio">
+            <End Role="Paciente" EntitySet="PacienteSet" />
+            <End Role="Convenio" EntitySet="ConvenioSet" />
+          </AssociationSet>
+          <AssociationSet Name="PacienteDentista" Association="Model1.PacienteDentista">
+            <End Role="Paciente" EntitySet="PacienteSet" />
+            <End Role="Dentista" EntitySet="DentistaSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Convenio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <NavigationProperty Name="Endereco" Relationship="Model1.ConvenioEndereco" FromRole="Convenio" ToRole="Endereco" />
+          <Property Name="EnderecoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dentista" Relationship="Model1.DentistaConvenio" FromRole="Convenio" ToRole="Dentista" />
+          <Property Name="DentistaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Paciente" Relationship="Model1.PacienteConvenio" FromRole="Convenio" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Endereco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rua" Type="String" Nullable="false" />
+          <Property Name="Numero" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cidade" Relationship="Model1.EnderecoCidade" FromRole="Endereco" ToRole="Cidade" />
+          <Property Name="CidadeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Convenio" Relationship="Model1.ConvenioEndereco" FromRole="Endereco" ToRole="Convenio" />
+          <NavigationProperty Name="Empresa" Relationship="Model1.EnderecoEmpresa" FromRole="Endereco" ToRole="Empresa" />
+          <NavigationProperty Name="Dentista" Relationship="Model1.DentistaEndereco" FromRole="Endereco" ToRole="Dentista" />
+          <NavigationProperty Name="Paciente" Relationship="Model1.PacienteEndereco" FromRole="Endereco" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Uf" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cidade" Relationship="Model1.CidadeEstado" FromRole="Estado" ToRole="Cidade" />
+        </EntityType>
+        <EntityType Name="Cidade">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <NavigationProperty Name="Estado" Relationship="Model1.CidadeEstado" FromRole="Cidade" ToRole="Estado" />
+          <Property Name="EstadoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Endereco" Relationship="Model1.EnderecoCidade" FromRole="Cidade" ToRole="Endereco" />
+        </EntityType>
+        <Association Name="CidadeEstado">
+          <End Type="Model1.Cidade" Role="Cidade" Multiplicity="*" />
+          <End Type="Model1.Estado" Role="Estado" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cidade">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EnderecoCidade">
+          <End Type="Model1.Endereco" Role="Endereco" Multiplicity="*" />
+          <End Type="Model1.Cidade" Role="Cidade" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Cidade">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Endereco">
+              <PropertyRef Name="CidadeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ConvenioEndereco">
+          <End Type="Model1.Convenio" Role="Convenio" Multiplicity="*" />
+          <End Type="Model1.Endereco" Role="Endereco" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convenio">
+              <PropertyRef Name="EnderecoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ano" Type="String" Nullable="false" />
+          <Property Name="Mes" Type="String" Nullable="false" />
+          <Property Name="Dia" Type="String" Nullable="false" />
+          <Property Name="Hora" Type="String" Nullable="false" />
+          <NavigationProperty Name="Dentista" Relationship="Model1.DentistaAgenda" FromRole="Agenda" ToRole="Dentista" />
+          <Property Name="DentistaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HistoricoPaciente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Cnpj" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <NavigationProperty Name="Endereco" Relationship="Model1.EnderecoEmpresa" FromRole="Empresa" ToRole="Endereco" />
+          <Property Name="EnderecoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="EnderecoEmpresa">
+          <End Type="Model1.Endereco" Role="Endereco" Multiplicity="1" />
+          <End Type="Model1.Empresa" Role="Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empresa">
+              <PropertyRef Name="EnderecoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Dentista">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="Especialidade" Type="String" Nullable="false" />
+          <Property Name="Remuneracao" Type="String" Nullable="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" />
+          <NavigationProperty Name="Agenda" Relationship="Model1.DentistaAgenda" FromRole="Dentista" ToRole="Agenda" />
+          <NavigationProperty Name="Endereco" Relationship="Model1.DentistaEndereco" FromRole="Dentista" ToRole="Endereco" />
+          <Property Name="EnderecoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Convenio" Relationship="Model1.DentistaConvenio" FromRole="Dentista" ToRole="Convenio" />
+          <NavigationProperty Name="Exame" Relationship="Model1.ExameDentista" FromRole="Dentista" ToRole="Exame" />
+          <NavigationProperty Name="Paciente" Relationship="Model1.PacienteDentista" FromRole="Dentista" ToRole="Paciente" />
+        </EntityType>
+        <Association Name="DentistaAgenda">
+          <End Type="Model1.Dentista" Role="Dentista" Multiplicity="1" />
+          <End Type="Model1.Agenda" Role="Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dentista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="DentistaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DentistaEndereco">
+          <End Type="Model1.Dentista" Role="Dentista" Multiplicity="*" />
+          <End Type="Model1.Endereco" Role="Endereco" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dentista">
+              <PropertyRef Name="EnderecoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DentistaConvenio">
+          <End Type="Model1.Dentista" Role="Dentista" Multiplicity="1" />
+          <End Type="Model1.Convenio" Role="Convenio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dentista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convenio">
+              <PropertyRef Name="DentistaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Exame">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="Dentista" Relationship="Model1.ExameDentista" FromRole="Exame" ToRole="Dentista" />
+          <Property Name="DentistaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ExameDentista">
+          <End Type="Model1.Exame" Role="Exame" Multiplicity="*" />
+          <End Type="Model1.Dentista" Role="Dentista" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Dentista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Exame">
+              <PropertyRef Name="DentistaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Data_Nascimento" Type="String" Nullable="false" />
+          <NavigationProperty Name="Endereco" Relationship="Model1.PacienteEndereco" FromRole="Paciente" ToRole="Endereco" />
+          <Property Name="EnderecoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dentista" Relationship="Model1.PacienteDentista" FromRole="Paciente" ToRole="Dentista" />
+          <Property Name="DentistaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="PacienteEndereco">
+          <End Type="Model1.Paciente" Role="Paciente" Multiplicity="*" />
+          <End Type="Model1.Endereco" Role="Endereco" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="EnderecoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PacienteConvenio">
+          <End Type="Model1.Paciente" Role="Paciente" Multiplicity="*" />
+          <End Type="Model1.Convenio" Role="Convenio" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Convenio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="ConvenioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PacienteDentista">
+          <End Type="Model1.Paciente" Role="Paciente" Multiplicity="*" />
+          <End Type="Model1.Dentista" Role="Dentista" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Dentista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="DentistaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
