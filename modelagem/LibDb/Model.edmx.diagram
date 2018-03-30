@@ -5,16 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="fc3c477be63b469891304b62675efd28" Name="Diagram1" ZoomLevel="74" >
-        <EntityTypeShape EntityType="Model1.Convenio" Width="1.5" PointX="7.875" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Convenio" Width="1.5" PointX="8.25" PointY="0.5" />
         <EntityTypeShape EntityType="Model1.Endereco" Width="1.5" PointX="9.875" PointY="0.5" />
         <EntityTypeShape EntityType="Model1.Estado" Width="1.5" PointX="11.625" PointY="0.5" />
-        <EntityTypeShape EntityType="Model1.Cidade" Width="1.5" PointX="10.75" PointY="2.875" />
+        <EntityTypeShape EntityType="Model1.Cidade" Width="1.5" PointX="11.625" PointY="2.75" />
         <AssociationConnector Association="Model1.CidadeEstado" />
         <AssociationConnector Association="Model1.EnderecoCidade" />
         <AssociationConnector Association="Model1.ConvenioEndereco" />
         <EntityTypeShape EntityType="Model1.Agenda" Width="1.5" PointX="0.5" PointY="4.125" />
-        <EntityTypeShape EntityType="Model1.HistoricoPaciente" Width="1.5" PointX="11.625" PointY="4.75" />
-        <EntityTypeShape EntityType="Model1.Empresa" Width="1.5" PointX="4.625" PointY="4" />
+        <EntityTypeShape EntityType="Model1.HistoricoPaciente" Width="1.5" PointX="6.375" PointY="5" />
+        <EntityTypeShape EntityType="Model1.Empresa" Width="1.5" PointX="4.375" PointY="4.5" />
         <AssociationConnector Association="Model1.EnderecoEmpresa" />
         <EntityTypeShape EntityType="Model1.Dentista" Width="1.5" PointX="2.75" PointY="1.375" />
         <AssociationConnector Association="Model1.DentistaAgenda" />
@@ -22,10 +22,18 @@
         <AssociationConnector Association="Model1.DentistaConvenio" />
         <EntityTypeShape EntityType="Model1.Exame" Width="1.5" PointX="0.5" PointY="0.5" />
         <AssociationConnector Association="Model1.ExameDentista" />
-        <EntityTypeShape EntityType="Model1.Paciente" Width="1.5" PointX="5.25" PointY="0.875" />
+        <EntityTypeShape EntityType="Model1.Paciente" Width="1.5" PointX="4.375" PointY="0.875" />
         <AssociationConnector Association="Model1.PacienteEndereco" />
-        <AssociationConnector Association="Model1.PacienteConvenio" />
         <AssociationConnector Association="Model1.PacienteDentista" />
+        <EntityTypeShape EntityType="Model1.PacienteConvenio" Width="1.5" PointX="6.25" PointY="0.625" />
+        <AssociationConnector Association="Model1.PacientePacienteConvenio" />
+        <AssociationConnector Association="Model1.PacienteConvenioConvenio" />
+        <AssociationConnector Association="Model1.HistoricoPacientePaciente" />
+        <EntityTypeShape EntityType="Model1.Fornecedor" Width="1.5" PointX="8.125" PointY="5" />
+        <AssociationConnector Association="Model1.FornecedorDentista" />
+        <AssociationConnector Association="Model1.FornecedorEmpresa" />
+        <EntityTypeShape EntityType="Model1.Funcionario" Width="1.5" PointX="10" PointY="5" />
+        <AssociationConnector Association="Model1.FuncionarioDentista" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
