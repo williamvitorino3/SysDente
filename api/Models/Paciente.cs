@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 
-namespace WebApiVendas.Models
+namespace SysDente.Models
 {
-    public class Produto
+    public class Paciente
     {
-        public Produto()
+        public Paciente()
         {
-            Enderecos = new HashSet<Endereco>();
+            HistoricoPacientes = new HashSet<HistoricoPaciente>();
         }
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -16,6 +16,7 @@ namespace WebApiVendas.Models
         public int DentistaId { get; set; }
         public Dentista Dentista { get; set; }
         public int EnderecoId { get; set; }
-        public ICollection<Endereco> Enderecos { get; set; }
+        public Endereco Endereco { get; set; }
+        public ICollection<HistoricoPaciente> HistoricoPacientes { get; set; }
     }
 }

@@ -90,6 +90,10 @@
             <End Role="Funcionario" EntitySet="FuncionarioSet" />
             <End Role="Dentista" EntitySet="DentistaSet" />
           </AssociationSet>
+          <AssociationSet Name="FuncionarioEndereco" Association="Model1.FuncionarioEndereco">
+            <End Role="Funcionario" EntitySet="FuncionarioSet" />
+            <End Role="Endereco" EntitySet="EnderecoSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Convenio">
           <Key>
@@ -116,6 +120,7 @@
           <NavigationProperty Name="Empresa" Relationship="Model1.EnderecoEmpresa" FromRole="Endereco" ToRole="Empresa" />
           <NavigationProperty Name="Dentista" Relationship="Model1.DentistaEndereco" FromRole="Endereco" ToRole="Dentista" />
           <NavigationProperty Name="Paciente" Relationship="Model1.PacienteEndereco" FromRole="Endereco" ToRole="Paciente" />
+          <NavigationProperty Name="Funcionario" Relationship="Model1.FuncionarioEndereco" FromRole="Endereco" ToRole="Funcionario" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -432,6 +437,8 @@
           <Property Name="Cpf" Type="String" Nullable="false" />
           <NavigationProperty Name="Dentista" Relationship="Model1.FuncionarioDentista" FromRole="Funcionario" ToRole="Dentista" />
           <Property Name="DentistaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Endereco" Relationship="Model1.FuncionarioEndereco" FromRole="Funcionario" ToRole="Endereco" />
+          <Property Name="EnderecoId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FuncionarioDentista">
           <End Type="Model1.Funcionario" Role="Funcionario" Multiplicity="*" />
@@ -442,6 +449,18 @@
             </Principal>
             <Dependent Role="Funcionario">
               <PropertyRef Name="DentistaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FuncionarioEndereco">
+          <End Type="Model1.Funcionario" Role="Funcionario" Multiplicity="*" />
+          <End Type="Model1.Endereco" Role="Endereco" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="EnderecoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
