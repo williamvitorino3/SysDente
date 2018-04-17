@@ -1,4 +1,5 @@
 
+using System;
 using Microsoft.EntityFrameworkCore;
 namespace SysDente.Models
 {
@@ -18,7 +19,7 @@ namespace SysDente.Models
     public DbSet<Cidade> Cidades{ get; set; }
     public DbSet<Empresa> Empresas{ get; set; }
     public DbSet<Estado> Estados{ get; set; }
-    public DbSet<Fornecedor> Fornecedors{ get; set; }
+    public DbSet<Fornecedor> Fornecedores{ get; set; }
     public DbSet<HistoricoPaciente> HistoricoPacientes{ get; set; }
     public DbSet<Paciente> Pacientes{ get; set; }
 
