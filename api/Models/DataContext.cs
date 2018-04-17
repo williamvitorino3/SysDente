@@ -1,5 +1,3 @@
-
-using System;
 using Microsoft.EntityFrameworkCore;
 namespace SysDente.Models
 {
@@ -22,12 +20,12 @@ namespace SysDente.Models
     public DbSet<Fornecedor> Fornecedores{ get; set; }
     public DbSet<HistoricoPaciente> HistoricoPacientes{ get; set; }
     public DbSet<Paciente> Pacientes{ get; set; }
+  }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
       
-      optionsBuilder.UseSqlServer("");
+      optionsBuilder.UseSqlServer(options => options.UseSqlServer(Configuration.GetConnectionString("ModelConnection")));
     }
-  }
 } 
     
