@@ -45,10 +45,26 @@ namespace SysDente.Contexts
         //     .HasKey(pt => new { ProductId = pt.ProdutoId, TagId = pt.EtiquetaId });
 
         // Chaves Únicas
+        modelBuilder.Entity<Agenda>().HasIndex(c => c.DentistaId).IsUnique(true);
+        modelBuilder.Entity<Cidade>().HasIndex(c => c.EstadoId).IsUnique(true);
+        modelBuilder.Entity<Convenio>().HasIndex(c => c.EnderecoId).IsUnique(true);
+        modelBuilder.Entity<Convenio>().HasIndex(c => c.DentistaId).IsUnique(true);
+        modelBuilder.Entity<Dentista>().HasIndex(c => c.EnderecoId).IsUnique(true);
+        modelBuilder.Entity<Empresa>().HasIndex(c => c.EnderecoId).IsUnique(true);
+        modelBuilder.Entity<Exame>().HasIndex(c => c.DentistaId).IsUnique(true);
+        modelBuilder.Entity<Fornecedor>().HasIndex(c => c.DentistaId).IsUnique(true);
+        modelBuilder.Entity<Fornecedor>().HasIndex(c => c.EmpresaId).IsUnique(true);
+        modelBuilder.Entity<Funcionario>().HasIndex(c => c.EnderecoId).IsUnique(true);
+        modelBuilder.Entity<Funcionario>().HasIndex(c => c.DentistaId).IsUnique(true);
+        modelBuilder.Entity<HistoricoPaciente>().HasIndex(c => c.PacienteId).IsUnique(true);
+        modelBuilder.Entity<Paciente>().HasIndex(c => c.EnderecoId).IsUnique(true);
+        modelBuilder.Entity<Paciente>().HasIndex(c => c.DentistaId).IsUnique(true);
+        modelBuilder.Entity<PacienteConvenio>().HasIndex(c => c.PacienteId).IsUnique(true);
+        modelBuilder.Entity<PacienteConvenio>().HasIndex(c => c.ConvenioId).IsUnique(true);
         // modelBuilder.Entity<Cliente>().HasIndex(c => c.PessoaId).IsUnique(true);
         // modelBuilder.Entity<Empregado>().HasIndex(e => e.PessoaId).IsUnique(true);
         // modelBuilder.Entity<Gerente>().HasIndex(m => m.PessoaId).IsUnique(true);
-        
+
 
         // Solução OnDelete
         //modelBuilder.Entity<ProdutoEtiqueta>()
