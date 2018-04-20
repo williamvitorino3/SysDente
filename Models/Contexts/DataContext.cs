@@ -61,9 +61,6 @@ namespace SysDente.Contexts
         modelBuilder.Entity<Paciente>().HasIndex(c => c.DentistaId).IsUnique(true);
         modelBuilder.Entity<PacienteConvenio>().HasIndex(c => c.PacienteId).IsUnique(true);
         modelBuilder.Entity<PacienteConvenio>().HasIndex(c => c.ConvenioId).IsUnique(true);
-        // modelBuilder.Entity<Cliente>().HasIndex(c => c.PessoaId).IsUnique(true);
-        // modelBuilder.Entity<Empregado>().HasIndex(e => e.PessoaId).IsUnique(true);
-        // modelBuilder.Entity<Gerente>().HasIndex(m => m.PessoaId).IsUnique(true);
 
 
         // Solução OnDelete
