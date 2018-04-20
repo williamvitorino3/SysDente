@@ -1,5 +1,5 @@
-using Domain.Models;
-using Domain.Repositories;
+using SysDente.Models;
+using SysDente.Repositories;
 using Infra.Data.Context;
 using System;
 using System.Collections.Generic;
