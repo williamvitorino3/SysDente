@@ -1,15 +1,15 @@
-using SysDente.Models;
+using SysDente.Entities;
 using SysDente.Repositories;
-using Infra.Data.Context;
+using SysDente.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SysDente.Repositories
 {
-    public class AutorRepository : RepositoryBase<Autor>, IAutorRepository
+    public class EstadoRepository : RepositoryBase<Estado>, IEstadoRepository
     {
-        public AutorRepository(DataContext context, bool saveChanges = true) : base(context, saveChanges)
+        public EstadoRepository(DataContext context, bool saveChanges = true) : base(context, saveChanges)
         {
         }
     }

@@ -1,7 +1,7 @@
 from os import system
 
 
-dados = "IAgenda.cs  IConvenio.cs  IEmpresa.cs   IEstado.cs  IFornecedor.cs   IHistoricoPaciente.cs  IPacienteConvenio.cs ICidade.cs  IDentista.cs  IEndereco.cs  IExame.cs   IFuncionario.cs  IModelsproj.cs         IPaciente.cs".split()
+dados = "IAgenda.cs  IConvenio.cs  IEmpresa.cs   IEstado.cs  IFornecedor.cs   IHistoricoPaciente.cs  IPacienteConvenio.cs ICidade.cs  IDentista.cs  IEndereco.cs  IExame.cs   IFuncionario.cs  IPaciente.cs".split()
 
 def RemoveI(txt):
   return txt[1::]

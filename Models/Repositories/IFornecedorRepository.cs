@@ -1,4 +1,4 @@
-using SysDente.Models;
+using SysDente.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
