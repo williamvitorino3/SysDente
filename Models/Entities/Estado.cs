@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SysDente.Entities
 {
-    public class Estado
+    public class Estado : IEntity
     {
         public Estado()
         {

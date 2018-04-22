@@ -2,8 +2,8 @@ using System.Collections.Generic;
 
 namespace SysDente.Entities
 {
-    public interface IEntidade
+    public interface IEntity
     {
-
+        int Id { get; set; }
     }
 }

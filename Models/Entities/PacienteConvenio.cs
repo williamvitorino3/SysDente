@@ -1,6 +1,6 @@
 namespace SysDente.Entities
 {
-    public class PacienteConvenio
+    public class PacienteConvenio : IEntity
     {
         public int Id { get; set; }
         public int PacienteId { get; set; }

@@ -36,6 +36,7 @@ namespace SysDente.Contexts
       // Define a base de dados a ser usada
       var cnn = config.GetConnectionString("ModelConnection");
       optionsBuilder.UseSqlite(cnn);
+      
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

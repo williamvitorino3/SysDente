@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SysDente.Entities
 {
-    public class Paciente
+    public class Paciente : IEntity
     {
         public Paciente()
         {

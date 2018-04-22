@@ -1,6 +1,6 @@
 namespace SysDente.Entities
 {
-    public class Empresa
+    public class Empresa : IEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }

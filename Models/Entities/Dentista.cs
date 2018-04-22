@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SysDente.Entities
 {
-    public class Dentista
+    public class Dentista : IEntity
     {
         public Dentista()
         {

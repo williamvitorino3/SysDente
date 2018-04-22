@@ -1,6 +1,6 @@
 namespace SysDente.Entities
 {
-    public class Fornecedor
+    public class Fornecedor : IEntity
     {
         public int Id { get; set; }
         public int DentistaId { get; set; }

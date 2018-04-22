@@ -1,6 +1,6 @@
 namespace SysDente.Entities
 {
-    public class Convenio
+    public class Convenio : IEntity
     {
         public int Id { get; set; }
         public string Tipo { get; set; }

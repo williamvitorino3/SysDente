@@ -1,6 +1,6 @@
 namespace SysDente.Entities
 {
-    public class Funcionario
+    public class Funcionario : IEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }

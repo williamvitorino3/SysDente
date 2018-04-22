@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SysDente.Entities
 {
-    public class Cidade
+    public class Cidade : IEntity
     {
         public Cidade()
         {

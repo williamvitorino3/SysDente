@@ -1,6 +1,6 @@
 namespace SysDente.Entities
 {
-    public class HistoricoPaciente
+    public class HistoricoPaciente : IEntity
     {
         public int Id { get; set; }
         public string Servico { get; set; }

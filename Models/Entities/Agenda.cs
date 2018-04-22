@@ -1,6 +1,6 @@
 namespace SysDente.Entities
 {
-    public class Agenda
+    public class Agenda : IEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }

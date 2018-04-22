@@ -3,7 +3,7 @@ using SysDente.Entities;
 
 namespace SysDente.Repositories
 {
-    public interface IRepositoryBase<T> where T : class
+    public interface IRepositoryBase<T> where T : class, IEntity
     {
         void Add(T entidade);
         IEnumerable<T> GetAll();

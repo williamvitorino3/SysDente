@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SysDente.Entities
 {
-    public class Endereco
+    public class Endereco : IEntity
     {
         public Endereco()
         {

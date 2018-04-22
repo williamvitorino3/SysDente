@@ -5,7 +5,7 @@ using SysDente.Entities;
 
 namespace SysDente.Repositories
 {
-    public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class, IEntity
     {
         private readonly DataContext _context;
 
