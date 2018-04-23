@@ -34,8 +34,8 @@ namespace SysDente.Contexts
           .Build();
 
       // Define a base de dados a ser usada
-      var cnn = config.GetConnectionString("ModelConnection");
-      optionsBuilder.UseSqlite(cnn);
+      var cnn = config.GetConnectionString("SqlServer");
+      optionsBuilder.UseSqlServer(cnn);
       
     }
 
