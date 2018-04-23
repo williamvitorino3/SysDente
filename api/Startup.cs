@@ -10,9 +10,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 using Microsoft.EntityFrameworkCore;
-using SysDente.Models;
-using SysDente.Contextos;
-using SysDente.Repositorios;
+using SysDente.Entities;
+using SysDente.Contexts;
+using SysDente.Repositories;
 
 namespace api
 {
@@ -28,7 +28,7 @@ namespace api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("ModelConnection")));
+            services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("SqlServer")));
 
             services.AddMvc();
             services.AddScoped<IAgenda.cs, Agenda.cs>();
