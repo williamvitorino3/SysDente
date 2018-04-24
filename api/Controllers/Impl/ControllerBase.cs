@@ -42,7 +42,6 @@ namespace SysDente.Controllers.Impl
         }
 
         [HttpPost]
-
         public virtual IActionResult Add([FromBody]T newObject)
         {
             if (!ModelState.IsValid)
@@ -62,8 +61,6 @@ namespace SysDente.Controllers.Impl
 
         }
        
-
-      
         [HttpPut("{id}")]
         public virtual IActionResult Update(int id, [FromBody]T newObject)
         {
@@ -105,7 +102,7 @@ namespace SysDente.Controllers.Impl
             {
                 return BadRequest(e.Message);
             }
-            return Ok();
+            return Ok(result);
         }
     }
 }
