@@ -45,6 +45,14 @@ namespace SysDente.Contexts
         // modelBuilder.Entity<ProdutoEtiqueta>()
         //     .HasKey(pt => new { ProductId = pt.ProdutoId, TagId = pt.EtiquetaId });
 
+        // Objetos Das Chaves Estrangeiras
+        // modelBuilder.Entity<Cidade>()
+        //   .HasOne(c => c.Estado)
+        //   .WithMany(e => e.Cidades)
+        //   .HasForeignKey(c => new { c.Estado });
+        
+        // conta => new { conta.ContaId, conta.TitularId});
+
         // Chaves Únicas
         modelBuilder.Entity<Estado>().HasIndex(c => c.UF).IsUnique(true);
         modelBuilder.Entity<Agenda>().HasIndex(c => c.DentistaId).IsUnique(true);
