@@ -56,9 +56,7 @@ namespace SysDente.Controllers.Impl
             {
                 return BadRequest(e.Message);
             }
-
             return Ok(newObject);
-
         }
        
         [HttpPut("{id}")]
