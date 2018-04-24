@@ -10,9 +10,9 @@ namespace SysDente.Controllers
     public interface IControllerBase<T> where T : class, IEntity
     {
         IActionResult GetAll();
-        IActionResult Get(int id);
-        IActionResult Create(T newObject);
+        IActionResult Find(int id);
+        IActionResult Add(T newObject);
         IActionResult Update(int id, T newObject);
-        IActionResult Delete(int id);
+        IActionResult Remove(int id);
     }
 }

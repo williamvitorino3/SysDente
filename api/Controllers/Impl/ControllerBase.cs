@@ -30,9 +30,9 @@ namespace SysDente.Controllers.Impl
        
       
         [HttpGet("{id}")]
-        public virtual IActionResult Get(int id)
+        public virtual IActionResult Find(int id)
         {
-            var result = _service.Get(id);
+            var result = _service.Find(id);
             if (result == null)
             {
                 return NotFound();
@@ -42,7 +42,7 @@ namespace SysDente.Controllers.Impl
 
         [HttpPost]
 
-        public virtual IActionResult Create([FromBody]T newObject)
+        public virtual IActionResult Add([FromBody]T newObject)
         {
             if (!ModelState.IsValid)
             {
@@ -50,7 +50,7 @@ namespace SysDente.Controllers.Impl
             }
             try
             {
-                var result = _service.Create(newObject);
+                var result = _service.Add(newObject);
             }
             catch (Exception e)
             {
@@ -66,7 +66,7 @@ namespace SysDente.Controllers.Impl
         [HttpPut("{id}")]
         public virtual IActionResult Update(int id, [FromBody]T newObject)
         {
-            var result = _service.Get(id);
+            var result = _service.Find(id);
             //newObject.Id = id;
             if (result == null)
             {
@@ -89,16 +89,16 @@ namespace SysDente.Controllers.Impl
         }
 
         [HttpDelete("{id}")]
-        public virtual IActionResult Delete(int id)
+        public virtual IActionResult Remove(int id)
         {
-            var result = _service.Get(id);
+            var result = _service.Find(id);
             if (result == null)
             {
                 return NotFound();
             }
             try
             {
-                _service.Delete(id);
+                _service.Remove(id);
             }
             catch (Exception e)
             {
