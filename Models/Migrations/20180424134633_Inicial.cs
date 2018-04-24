@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Models.Migrations
 {
-    public partial class initial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -86,7 +86,7 @@ namespace Models.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "Enderecos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -109,7 +109,7 @@ namespace Models.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "Enderecos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -159,7 +159,7 @@ namespace Models.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "Enderecos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -213,7 +213,7 @@ namespace Models.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "Enderecos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -243,7 +243,7 @@ namespace Models.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "Enderecos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -317,7 +317,7 @@ namespace Models.Migrations
                         column: x => x.PacienteId,
                         principalTable: "Pacientes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

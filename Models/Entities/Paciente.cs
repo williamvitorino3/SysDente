@@ -7,6 +7,7 @@ namespace SysDente.Entities
         public Paciente()
         {
             HistoricoPacientes = new HashSet<HistoricoPaciente>();
+            PacienteConvenios = new HashSet<PacienteConvenio>();
         }
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -18,5 +19,6 @@ namespace SysDente.Entities
         public int EnderecoId { get; set; }
         public Endereco Endereco { get; set; }
         public ICollection<HistoricoPaciente> HistoricoPacientes { get; set; }
+        public ICollection<PacienteConvenio> PacienteConvenios { get; set; }
     }
 }

@@ -65,10 +65,31 @@ namespace SysDente.Contexts
 
 
         // Solução OnDelete
-        //modelBuilder.Entity<ProdutoEtiqueta>()
-        //    .HasOne(p => p.Produto)
-        //    .WithMany(m => m.ProdutosEtiquetas)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<Convenio>()
+          .HasOne(e => e.Endereco)
+          .WithMany(c => c.Convenios)
+          .OnDelete(DeleteBehavior.ClientSetNull);
+        modelBuilder.Entity<Funcionario>()
+          .HasOne(e => e.Endereco)
+          .WithMany(c => c.Funcionarios)
+           .OnDelete(DeleteBehavior.ClientSetNull);
+        modelBuilder.Entity<Paciente>()
+          .HasOne(e => e.Endereco)
+          .WithMany(c => c.Pacientes)
+          .OnDelete(DeleteBehavior.ClientSetNull);
+        modelBuilder.Entity<Empresa>()
+          .HasOne(e => e.Endereco)
+          .WithMany(c => c.Empresas)
+          .OnDelete(DeleteBehavior.ClientSetNull);
+        modelBuilder.Entity<Dentista>()
+          .HasOne(e => e.Endereco)
+          .WithMany(c => c.Dentistas)
+          .OnDelete(DeleteBehavior.ClientSetNull);
+
+        modelBuilder.Entity<PacienteConvenio>()
+          .HasOne(p => p.Paciente)
+          .WithMany(c => c.PacienteConvenios)
+          .OnDelete(DeleteBehavior.ClientSetNull);
 
     }
   }

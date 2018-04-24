@@ -331,24 +331,21 @@ namespace Models.Migrations
 
                     b.HasOne("SysDente.Entities.Endereco", "Endereco")
                         .WithMany("Convenios")
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EnderecoId");
                 });
 
             modelBuilder.Entity("SysDente.Entities.Dentista", b =>
                 {
                     b.HasOne("SysDente.Entities.Endereco", "Endereco")
                         .WithMany("Dentistas")
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EnderecoId");
                 });
 
             modelBuilder.Entity("SysDente.Entities.Empresa", b =>
                 {
                     b.HasOne("SysDente.Entities.Endereco", "Endereco")
                         .WithMany("Empresas")
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EnderecoId");
                 });
 
             modelBuilder.Entity("SysDente.Entities.Endereco", b =>
@@ -389,8 +386,7 @@ namespace Models.Migrations
 
                     b.HasOne("SysDente.Entities.Endereco", "Endereco")
                         .WithMany("Funcionarios")
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EnderecoId");
                 });
 
             modelBuilder.Entity("SysDente.Entities.HistoricoPaciente", b =>
@@ -410,21 +406,19 @@ namespace Models.Migrations
 
                     b.HasOne("SysDente.Entities.Endereco", "Endereco")
                         .WithMany("Pacientes")
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EnderecoId");
                 });
 
             modelBuilder.Entity("SysDente.Entities.PacienteConvenio", b =>
                 {
                     b.HasOne("SysDente.Entities.Convenio", "Convenio")
-                        .WithMany()
+                        .WithMany("PacienteConvenios")
                         .HasForeignKey("ConvenioId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SysDente.Entities.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("PacienteId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("PacienteConvenios")
+                        .HasForeignKey("PacienteId");
                 });
 #pragma warning restore 612, 618
         }
