@@ -57,7 +57,7 @@ namespace SysDente.Controllers.Impl
                 return BadRequest(e.Message);
             }
 
-            return CreatedAtRoute("default", new { id = newObject.Id }, newObject);
+            return Ok(newObject);
 
         }
        
