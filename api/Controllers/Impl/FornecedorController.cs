@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class FornecedorController : ControllerBase<Fornecedor>, IFornecedorController
     {
-        public FornecedorController(IServiceBase<Fornecedor> service) : base(service)
+        public FornecedorController(IFornecedorService service) : base(service)
         {
         }
     }

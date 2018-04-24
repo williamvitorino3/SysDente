@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class EmpresaService : ServiceBase<Empresa>, IEmpresaService
     {
-        protected EmpresaService(IRepositoryBase<Empresa> repository) : base(repository)
+        public EmpresaService(IEmpresaRepository repository) : base(repository)
         {
         }
     }

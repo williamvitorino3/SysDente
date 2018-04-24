@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class FuncionarioService : ServiceBase<Funcionario>, IFuncionarioService
     {
-        protected FuncionarioService(IRepositoryBase<Funcionario> repository) : base(repository)
+        public FuncionarioService(IFuncionarioRepository repository) : base(repository)
         {
         }
     }

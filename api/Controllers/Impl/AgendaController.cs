@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class AgendaController : ControllerBase<Agenda>, IAgendaController
     {
-        public AgendaController(IServiceBase<Agenda> service) : base(service)
+        public AgendaController(IAgendaService service) : base(service)
         {
         }
     }

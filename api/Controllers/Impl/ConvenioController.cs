@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class ConvenioController : ControllerBase<Convenio>, IConvenioController
     {
-        public ConvenioController(IServiceBase<Convenio> service) : base(service)
+        public ConvenioController(IConvenioService service) : base(service)
         {
         }
     }

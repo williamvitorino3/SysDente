@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class DentistaService : ServiceBase<Dentista>, IDentistaService
     {
-        protected DentistaService(IRepositoryBase<Dentista> repository) : base(repository)
+        public DentistaService(IDentistaRepository repository) : base(repository)
         {
         }
     }

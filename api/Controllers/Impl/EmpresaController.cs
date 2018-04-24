@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class EmpresaController : ControllerBase<Empresa>, IEmpresaController
     {
-        public EmpresaController(IServiceBase<Empresa> service) : base(service)
+        public EmpresaController(IEmpresaService service) : base(service)
         {
         }
     }

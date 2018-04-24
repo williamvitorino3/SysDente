@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class FuncionarioController : ControllerBase<Funcionario>, IFuncionarioController
     {
-        public FuncionarioController(IServiceBase<Funcionario> service) : base(service)
+        public FuncionarioController(IFuncionarioService service) : base(service)
         {
         }
     }

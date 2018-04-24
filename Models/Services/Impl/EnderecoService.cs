@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class EnderecoService : ServiceBase<Endereco>, IEnderecoService
     {
-        protected EnderecoService(IRepositoryBase<Endereco> repository) : base(repository)
+        public EnderecoService(IEnderecoRepository repository) : base(repository)
         {
         }
     }

@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class PacienteController : ControllerBase<Paciente>, IPacienteController
     {
-        public PacienteController(IServiceBase<Paciente> service) : base(service)
+        public PacienteController(IPacienteService service) : base(service)
         {
         }
     }

@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class ConvenioService : ServiceBase<Convenio>, IConvenioService
     {
-        protected ConvenioService(IRepositoryBase<Convenio> repository) : base(repository)
+        public ConvenioService(IConvenioRepository repository) : base(repository)
         {
         }
     }

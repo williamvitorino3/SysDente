@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class DentistaController : ControllerBase<Dentista>, IDentistaController
     {
-        public DentistaController(IServiceBase<Dentista> service) : base(service)
+        public DentistaController(IDentistaService service) : base(service)
         {
         }
     }

@@ -14,7 +14,7 @@ namespace SysDente.Services.Impl
 {
     public class """+entity+"""Service : ServiceBase<"""+entity+""">, I"""+entity+"""Service
     {
-        protected """+entity+"""Service(IRepositoryBase<"""+entity+"""> repository) : base(repository)
+        public """+entity+"""Service(I"""+entity+"""Repository repository) : base(repository)
         {
         }
     }

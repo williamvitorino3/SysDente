@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class EstadoService : ServiceBase<Estado>, IEstadoService
     {
-        protected EstadoService(IRepositoryBase<Estado> repository) : base(repository)
+        public EstadoService(IEstadoRepository repository) : base(repository)
         {
         }
     }

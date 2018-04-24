@@ -14,6 +14,9 @@ using SysDente.Entities;
 using SysDente.Contexts;
 using SysDente.Repositories;
 
+using SysDente.Services;
+using SysDente.Services.Impl;
+
 namespace api
 {
     public class Startup
@@ -28,7 +31,7 @@ namespace api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("SqlServer")));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
 
             services.AddMvc();
             services.AddScoped<IAgendaRepository, AgendaRepository>();
@@ -44,6 +47,20 @@ namespace api
             services.AddScoped<IExameRepository, ExameRepository>();
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
             services.AddScoped<IPacienteRepository, PacienteRepository>();
+
+            services.AddScoped<IAgendaService, AgendaService>();
+            services.AddScoped<IConvenioService, ConvenioService>();
+            services.AddScoped<IEmpresaService, EmpresaService>();
+            services.AddScoped<IEstadoService, EstadoService>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IHistoricoPacienteService, HistoricoPacienteService>();
+            services.AddScoped<IPacienteConvenioService, PacienteConvenioService>();
+            services.AddScoped<ICidadeService, CidadeService>();
+            services.AddScoped<IDentistaService, DentistaService>();
+            services.AddScoped<IEnderecoService, EnderecoService>();
+            services.AddScoped<IExameService, ExameService>();
+            services.AddScoped<IFuncionarioService, FuncionarioService>();
+            services.AddScoped<IPacienteService, PacienteService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

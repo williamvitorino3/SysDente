@@ -17,7 +17,7 @@ namespace SysDente.Controllers.Impl
 {
     public class """+entity+"""Controller : ControllerBase<"""+entity+""">, I"""+entity+"""Controller
     {
-        public """+entity+"""Controller(IServiceBase<"""+entity+"""> service) : base(service)
+        public """+entity+"""Controller(I"""+entity+"""Service service) : base(service)
         {
         }
     }

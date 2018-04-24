@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class HistoricoPacienteService : ServiceBase<HistoricoPaciente>, IHistoricoPacienteService
     {
-        protected HistoricoPacienteService(IRepositoryBase<HistoricoPaciente> repository) : base(repository)
+        public HistoricoPacienteService(IHistoricoPacienteRepository repository) : base(repository)
         {
         }
     }

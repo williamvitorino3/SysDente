@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class FornecedorService : ServiceBase<Fornecedor>, IFornecedorService
     {
-        protected FornecedorService(IRepositoryBase<Fornecedor> repository) : base(repository)
+        public FornecedorService(IFornecedorRepository repository) : base(repository)
         {
         }
     }

@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class EnderecoController : ControllerBase<Endereco>, IEnderecoController
     {
-        public EnderecoController(IServiceBase<Endereco> service) : base(service)
+        public EnderecoController(IEnderecoService service) : base(service)
         {
         }
     }

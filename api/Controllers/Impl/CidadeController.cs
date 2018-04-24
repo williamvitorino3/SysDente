@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class CidadeController : ControllerBase<Cidade>, ICidadeController
     {
-        public CidadeController(IServiceBase<Cidade> service) : base(service)
+        public CidadeController(ICidadeService service) : base(service)
         {
         }
     }

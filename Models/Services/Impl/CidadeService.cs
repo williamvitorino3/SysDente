@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class CidadeService : ServiceBase<Cidade>, ICidadeService
     {
-        protected CidadeService(IRepositoryBase<Cidade> repository) : base(repository)
+        public CidadeService(ICidadeRepository repository) : base(repository)
         {
         }
     }

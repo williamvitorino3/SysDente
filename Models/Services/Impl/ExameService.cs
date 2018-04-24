@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class ExameService : ServiceBase<Exame>, IExameService
     {
-        protected ExameService(IRepositoryBase<Exame> repository) : base(repository)
+        public ExameService(IExameRepository repository) : base(repository)
         {
         }
     }

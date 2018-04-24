@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class EstadoController : ControllerBase<Estado>, IEstadoController
     {
-        public EstadoController(IServiceBase<Estado> service) : base(service)
+        public EstadoController(IEstadoService service) : base(service)
         {
         }
     }

@@ -10,7 +10,7 @@ namespace SysDente.Controllers.Impl
 {
     public class ExameController : ControllerBase<Exame>, IExameController
     {
-        public ExameController(IServiceBase<Exame> service) : base(service)
+        public ExameController(IExameService service) : base(service)
         {
         }
     }

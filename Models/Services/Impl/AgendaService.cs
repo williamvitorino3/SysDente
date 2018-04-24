@@ -9,7 +9,7 @@ namespace SysDente.Services.Impl
 {
     public class AgendaService : ServiceBase<Agenda>, IAgendaService
     {
-        protected AgendaService(IRepositoryBase<Agenda> repository) : base(repository)
+        public AgendaService(IAgendaRepository repository) : base(repository)
         {
         }
     }
