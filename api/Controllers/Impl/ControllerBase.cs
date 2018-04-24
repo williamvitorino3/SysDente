@@ -50,7 +50,7 @@ namespace SysDente.Controllers.Impl
             }
             try
             {
-                var result = _service.Add(newObject);
+                _service.Add(newObject);
             }
             catch (Exception e)
             {
@@ -78,7 +78,7 @@ namespace SysDente.Controllers.Impl
             }
             try
             {
-                result = _service.Update(newObject, id);
+                _service.Update(newObject, id);
             }
             catch (Exception e)
             {
