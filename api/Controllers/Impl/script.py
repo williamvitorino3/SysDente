@@ -6,18 +6,18 @@ for entity in entities:
     with open("I{}Controller.cs".format(entity), "w") as target:
         target.writelines(
             """
-using Domain.Entities;
-using Domain.Services;
+using SysDente.Entities;
+using SysDente.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApi.Controllers.Impl
+namespace SysDente.Controllers.Impl
 {
-    public class AutorController : ControllerBase<Autor>, IAutorController
+    public class """+entity+"""Controller : ControllerBase<"""+entity+""">, I"""+entity+"""Controller
     {
-        public AutorController(IServiceBase<Autor> service) : base(service)
+        public """+entity+"""Controller(IServiceBase<"""+entity+"""> service) : base(service)
         {
         }
     }
