@@ -5,10 +5,11 @@ namespace SysDente.Repositories
 {
     public interface IRepositoryBase<T> where T : class, IEntity
     {
-        void Add(T entidade);
+        void Save();
         IEnumerable<T> GetAll();
-        T Find(long id);
-        void Remove(long id);
-        void Update(T entidade);
+        void Add(T entidade);
+        T Find(int id);
+        void Remove(int id);
+        void Update(T entidade, int id);
     }
 }
