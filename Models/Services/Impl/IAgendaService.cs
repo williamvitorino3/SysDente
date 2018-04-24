@@ -1,0 +1,17 @@
+
+using SysDente.Entities;
+using SysDente.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace SysDente.Services.Impl
+{
+    public class AgendaService : ServiceBase<Agenda>, IAgendaService
+    {
+        protected AgendaService(IRepositoryBase<Agenda> repository) : base(repository)
+        {
+        }
+    }
+}
+            
