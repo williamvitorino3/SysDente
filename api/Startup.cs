@@ -31,20 +31,19 @@ namespace api
             services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("SqlServer")));
 
             services.AddMvc();
-            services.AddScoped<IAgenda.cs, Agenda.cs>();
-            services.AddScoped<IConvenio.cs, Convenio.cs>();
-            services.AddScoped<IEmpresa.cs, Empresa.cs>();
-            services.AddScoped<IEstado.cs, Estado.cs>();
-            services.AddScoped<IFornecedor.cs, Fornecedor.cs>();
-            services.AddScoped<IHistoricoPaciente.cs, HistoricoPaciente.cs>();
-            services.AddScoped<IPacienteConvenio.cs, PacienteConvenio.cs>();
-            services.AddScoped<ICidade.cs, Cidade.cs>();
-            services.AddScoped<IDentista.cs, Dentista.cs>();
-            services.AddScoped<IEndereco.cs, Endereco.cs>();
-            services.AddScoped<IExame.cs, Exame.cs>();
-            services.AddScoped<IFuncionario.cs, Funcionario.cs>();
-            services.AddScoped<IModelsproj.cs, Modelsproj.cs>();
-            services.AddScoped<IPaciente.cs, Paciente.cs>();
+            services.AddScoped<IAgendaRepository, AgendaRepository>();
+            services.AddScoped<IConvenioRepository, ConvenioRepository>();
+            services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+            services.AddScoped<IEstadoRepository, EstadoRepository>();
+            services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+            services.AddScoped<IHistoricoPacienteRepository, HistoricoPacienteRepository>();
+            services.AddScoped<IPacienteConvenioRepository, PacienteConvenioRepository>();
+            services.AddScoped<ICidadeRepository, CidadeRepository>();
+            services.AddScoped<IDentistaRepository, DentistaRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+            services.AddScoped<IExameRepository, ExameRepository>();
+            services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddScoped<IPacienteRepository, PacienteRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
